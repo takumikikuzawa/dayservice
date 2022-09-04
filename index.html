@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>デイサービスセンター</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+		(function (d) {
+			var config = {
+				kitId: 'vgk2pfk',
+				scriptTimeout: 3000,
+				async: true
+			},
+				h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+		})(document);
+	</script>
+</head>
+
+<body>
+
+	<!-- ヘッダー　-->
+	<header class="header">
+		<div class="header__logo">
+			<a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+		</div>
+		<nav>
+			<ul class="nav">
+				<li class="nav__list"><a href="index.html">ホーム</a></li>
+				<li class="nav__list"><a href="service.html">サービス</a></li>
+				<li class="nav__list"><a href="guide.html">ご利用案内</a></li>
+				<li class="nav__list"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<figure class="header__img">
+			<a href=""><img src="images/tel1.png" alt="お電話でのお問い合わせ" class="header__tel"></a>
+			<a href="contact.html"><img src="images/contact.png" alt="メールでのお問い合わせ" class="header__contact"></a>
+		</figure>
+
+		<div class="ham">
+			<div>
+				<div class="ham__img">
+					<img src="images/tel1.png" alt="お電話でのお問い合わせ">
+					<span class="ham__img--contact"><a href="contact.html"><img src="images/contact.png"
+								alt="メールでのお問い合わせ"></a></span>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li class="ham__list"><a href="index.html">ホーム</a></li>
+					<hr>
+					<li class="ham__list"><a href="service.html">サービス</a></li>
+					<hr>
+					<li class="ham__list"><a href="guide.html">ご利用案内</a></li>
+					<hr>
+					<li class="ham__list"><a href="facility.html">施設案内</a></li>
+					<hr>
+				</ul>
+			</nav>
+		</div>
+		<button type="button" class="ham-btn js-btn">
+			<span class="ham-btn__line"></span>
+		</button>
+		<p class="ham-btn__text">メニュー</p>
+	</header>
+
+	<img src="images/mainvisual.jpg" class="mainvisu" alt="メインビジュアル">
+
+	<!-- 当施設について　-->
+	<section class="home-about">
+		<h1 class="home-about__heading-lv1">当施設について</h1>
+		<h4 class="home-about__heading-lv4">About</h4>
+		<p class="home-about__text">
+			デイサービスセンターのホームページを<span class="home-about__indention">ご覧いただきまして誠に有難うございます。</span><br><br>
+			いこいでは、心身機能の維持・向上を目的とし<span class="home-about__indention">ご利用者様個々の能力に応じた機能訓練を行います。</span><br>
+			また、入浴や食事やレクリエーション、趣味活動、<span class="home-about__indention">社会交流の機会などその人に沿った空間を提供します。</span><br>
+			私達は介護スタッフとしてご利用者様の日々の暮らしに<span class="home-about__indention">関心や拘りをもち、専門職として追求し、実現します。</span>
+		</p>
+	</section>
+
+	<!-- サービス　-->
+	<section class="home-service">
+		<div class="home-service__content fadeout">
+			<h2 class="home-service__heading-lv2">サービス</h2>
+			<h4 class="home-service__heading-lv4">Service</h4>
+			<p class="home-service__text">様々なサービスの中から<br>
+				最適なものをご提供します</p>
+			<ul class="home-service__list">
+				<li><span class="home-service__item">■</span>　機能訓練　　</li>
+				<li><span class="home-service__item">■</span>　食事介助　　</li>
+				<li><span class="home-service__item">■</span>　社会参加訓練</li>
+				<li><span class="home-service__item">■</span>　入浴サービス</li>
+				<li><span class="home-service__item">■</span>　送迎サービス</li>
+				<li><span class="home-service__item">■</span>　健康管理　　</li>
+			</ul>
+			<a href="service.html" class="btn pushdown home-service__btn"><span class=" btn__text">詳しくはこちら</span></a>
+		</div>
+		<figure class="fadeout">
+			<img src="images/service.jpg" alt="サービス画像" class="home-service__img">
+		</figure>
+	</section>
+
+	<!-- ご利用案内　-->
+	<section class="home-guide">
+		<div class="fadeout">
+			<h2 class="home-guide__heading-lv2">ご利用案内</h2>
+			<h4 class="home-guide__heading-lv4">Guide</h4>
+			<figure class="home-guide__usage-flow">
+				<img src="images/usage-flow.png">
+			</figure>
+			<p class="home-guide__text">
+				要介護認定有無の確認<br>
+				↓<br>
+				お問い合わせください<br>
+				↓<br>
+				見学・体験<br>
+				↓<br>
+				サービス利用開始
+			</p>
+			<a href="guide.html" class="btn pushdown home-guide__btn"><span>詳しくはこちら</span></a>
+			<div class="home-guide__img">
+				<img src="images/guide.jpg" alt="利用案内画像">
+			</div>
+		</div>
+	</section>
+
+	<!-- 新着情報　-->
+	<section class="home-topic">
+		<h3 class="home-topic__heading-lv3">新着情報</h3>
+		<h4 class="home-topic__heading-lv4">Topic</h4>
+		<div class="home-topic__wrap">
+			<div class="home-topic__content">
+				<p class="home-topic__text">　2022/6/1　　　フードプログラム6月のメニュー。</p>
+			</div>
+			<div class="home-topic__content">
+				<p class="home-topic__text">　2022/5/2　　　フードプログラム5月のメニュー。</p>
+			</div>
+			<div class="home-topic__content">
+				<p class="home-topic__text">　2022/4/3　　　フードプログラム4月のメニュー。</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- フッター　-->
+	<footer class="footer">
+		<div class="footer__inner">
+			<div>
+				<h2 class="footer__heading-lv2">お問い合わせ</h2>
+				<p class="footer__text">
+					メール、お電話にて<br>
+					お気軽にご連絡下さい。
+				</p>
+			</div>
+			<figure class="footer__img">
+				<img src="images/tel2.png" alt="お電話にてお問い合わせ下さい"><br>
+				<a href="contact.html"><img src="images/mail.png" alt="メールにてお問い合わせ下さい" class="footer__img--mail"></a>
+			</figure>
+		</div>
+		<nav class="footer-nav">
+			<ul class="footer-nav__inner">
+				<li><a href="index.html">ホーム</a></li>
+				<li class="footer-nav__item"><a href="service.html">サービス</a></li>
+				<li class="footer-nav__item"><a href="guide.html">ご利用案内</a></li>
+				<li class="footer-nav__item"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<hr>
+		<p class="copy-right">copyrightⒸ2022 ikoi</p>
+	</footer>
+
+	<ul class="reservation">
+		<li class="reservation__img"><a href="reservation.html"><img src="images/reservation.png"></a></li>
+		<li><img src="images/whiteallow.png"></li>
+	</ul>
+
+</body>
+
+</html>

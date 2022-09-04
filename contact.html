@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>デイサービスセンター　いこい</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+		(function (d) {
+			var config = {
+				kitId: 'vgk2pfk',
+				scriptTimeout: 3000,
+				async: true
+			},
+				h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+		})(document);
+	</script>
+</head>
+
+<body>
+	<!-- ヘッダー　-->
+	<header class="header">
+		<div class="header__logo">
+			<a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+		</div>
+		<nav>
+			<ul class="nav">
+				<li class="nav__list"><a href="index.html">ホーム</a></li>
+				<li class="nav__list"><a href="service.html">サービス</a></li>
+				<li class="nav__list"><a href="guide.html">ご利用案内</a></li>
+				<li class="nav__list"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<figure class="header__img">
+			<a href=""><img src="images/tel1.png" alt="お電話でのお問い合わせ" class="header__tel"></a>
+			<a href="contact.html"><img src="images/contact.png" alt="メールでのお問い合わせ" class="header__contact"></a>
+		</figure>
+
+		<div class="ham">
+			<div>
+				<div class="ham__img">
+					<img src="images/tel1.png" alt="お電話でのお問い合わせ">
+					<span class="ham__img--contact"><a href="contact.html"><img src="images/contact.png"
+								alt="メールでのお問い合わせ"></a></span>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li class="ham__list"><a href="index.html">ホーム</a></li>
+					<hr>
+					<li class="ham__list"><a href="service.html">サービス</a></li>
+					<hr>
+					<li class="ham__list"><a href="guide.html">ご利用案内</a></li>
+					<hr>
+					<li class="ham__list"><a href="facility.html">施設案内</a></li>
+					<hr>
+				</ul>
+			</nav>
+		</div>
+		<button type="button" class="ham-btn js-btn">
+			<span class="ham-btn__line"></span>
+		</button>
+		<p class="ham-btn__text">メニュー</p>
+	</header>
+
+	<!--　パンくずリスト -->
+	<div class="pankuzu-list">
+		<a href="index.html"><img src="images/home.png" alt="ホーム" class="pankuzu-list__home"></a>
+		<p class="pankuzu-list__item">　/　お問い合わせ</p>
+	</div>
+
+	<!--　タイトル　-->
+	<section class="title">
+		<h1 class="title__heading-lv1">お問い合わせ</h1>
+		<h4 class="title__heading-lv4">Contact</h4>
+	</section>
+
+	<!-- 問い合わせフォーム　-->
+	<section class="contact-form">
+		<h3 class="contact-form__heading-lv3">お問い合わせフォーム</h3>
+		<p class="contact-form__text">下記内容を入力の上、送信ボタンを押してください。<br>お問い合わせの内容をご確認後、こちらからご連絡先に連絡いたします。</p>
+		<div class="contact-input">
+			<form>
+				<label for="name">名前</label><span class="block">
+					<input type="text" placeholder="　例）山田　太郎" class="contact-input__name" id="name"></span>
+			</form>
+			<form>
+				<label for="tel">電話番号</label><span class="block">
+					<input type="text" placeholder="　例）00000000000" class="contact-input__tel" id="tel"></span>
+			</form>
+			<form>
+				<label for="mail">メールアドレス</label>
+				<input type="text" placeholder="　例）guest@example.com" class="contact-input__mail" id="mail">
+			</form>
+			<label for="contact">お問い合わせ内容</label>
+			<textarea name="message" placeholder="　お問合せ内容を入力" class="contact-input__contact" id="contact"></textarea>
+		</div>
+		<p class="policy">※個人情報の取り扱いに関しましては、<span class="block"><a href="policy.html" target="_blank"
+					class="policy--underline">「プライバシーポリシー」</a>をご確認ください。</span></p>
+		<div class="policy-checkbox">
+			<label for="privacy" class="policy-checkbox__text"> <input type="checkbox"
+					id="privacy">　プライバシーポリシーに同意します</label>
+			<div class="btn pushdown policy-checkbox__btn"><span>メールを送信する</span></div>
+		</div>
+		<div class="note">
+			<p class="note__text">
+				※お問い合わせフォームをご記入の上、送信をお願いいたします。<br>※送信後にお問い合わせ完了のメールが届かなかった場合はメールアドレスが間違っているか迷惑メールに分類されている可能性がありますので、いま一度ご確認をお願い致します。
+			</p>
+		</div>
+	</section>
+
+	<!-- フッター　-->
+	<footer class="footer">
+		<div class="footer__inner">
+			<div>
+				<h2 class="footer__heading-lv2">お問い合わせ</h2>
+				<p class="footer__text">
+					メール、お電話にて<br>
+					お気軽にご連絡下さい。
+				</p>
+			</div>
+			<figure class="footer__img">
+				<img src="images/tel2.png" alt="お電話にてお問い合わせ下さい"><br>
+				<a href="contact.html"><img src="images/mail.png" alt="メールにてお問い合わせ下さい" class="footer__img--mail"></a>
+			</figure>
+		</div>
+		<nav class="footer-nav">
+			<ul class="footer-nav__inner">
+				<li><a href="index.html">ホーム</a></li>
+				<li class="footer-nav__item"><a href="service.html">サービス</a></li>
+				<li class="footer-nav__item"><a href="guide.html">ご利用案内</a></li>
+				<li class="footer-nav__item"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<hr>
+		<p class="copy-right">copyrightⒸ2022 ikoi</p>
+	</footer>
+
+	<ul class="reservation">
+		<li class="reservation__img"><a href="reservation.html"><img src="images/reservation.png"></a></li>
+		<li><img src="images/whiteallow.png"></li>
+	</ul>
+
+</body>
+
+</html>

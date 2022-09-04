@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>デイサービスセンター　いこい</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+		(function (d) {
+			var config = {
+				kitId: 'vgk2pfk',
+				scriptTimeout: 3000,
+				async: true
+			},
+				h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+		})(document);
+	</script>
+</head>
+
+<body>
+	<!-- ヘッダー　-->
+	<header class="header">
+		<div class="header__logo">
+			<a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+		</div>
+		<nav>
+			<ul class="nav">
+				<li class="nav__list"><a href="index.html">ホーム</a></li>
+				<li class="nav__list"><a href="service.html">サービス</a></li>
+				<li class="nav__list"><a href="guide.html">ご利用案内</a></li>
+				<li class="nav__list"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<figure class="header__img">
+			<a href=""><img src="images/tel1.png" alt="お電話でのお問い合わせ" class="header__tel"></a>
+			<a href="contact.html"><img src="images/contact.png" alt="メールでのお問い合わせ" class="header__contact"></a>
+		</figure>
+
+		<div class="ham">
+			<div>
+				<div class="ham__img">
+					<img src="images/tel1.png" alt="お電話でのお問い合わせ">
+					<span class="ham__img--contact"><a href="contact.html"><img src="images/contact.png"
+								alt="メールでのお問い合わせ"></a></span>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li class="ham__list"><a href="index.html">ホーム</a></li>
+					<hr>
+					<li class="ham__list"><a href="service.html">サービス</a></li>
+					<hr>
+					<li class="ham__list"><a href="guide.html">ご利用案内</a></li>
+					<hr>
+					<li class="ham__list"><a href="facility.html">施設案内</a></li>
+					<hr>
+				</ul>
+			</nav>
+		</div>
+		<button type="button" class="ham-btn js-btn">
+			<span class="ham-btn__line"></span>
+		</button>
+		<p class="ham-btn__text">メニュー</p>
+	</header>
+
+	<!--　パンくずリスト -->
+	<div class="pankuzu-list">
+		<a href="index.html"><img src="images/home.png" alt="ホーム" class="pankuzu-list__home"></a>
+		<p class="pankuzu-list__item">　/　施設案内</p>
+	</div>
+
+	<!--　タイトル　-->
+	<section class="title">
+		<h1 class="title__heading-lv1">施設案内</h1>
+		<h4 class="title__heading-lv4">Facility</h4>
+	</section>
+
+	<!--　メイン　-->
+	<section class="facility-main">
+		<h3 class="facility-main__heading-lv3">会社概要</h3>
+		<table class="facility-main__table">
+			<tr class="facility-main__text">
+				<td>　施設名</td>
+				<td>　デイサービスセンター　いこい</td>
+			</tr>
+			<tr class="facility-main__text">
+				<td>　資本金</td>
+				<td>　￥1,000,000</td>
+			</tr>
+			<tr class="facility-main__text">
+				<td>　代表取締役</td>
+				<td>　菊澤　拓海</td>
+			</tr>
+			<tr class="facility-main__text">
+				<td>　取引銀行</td>
+				<td>　関西みらい銀行　りそな銀行</td>
+			</tr>
+			<tr class="facility-main__text">
+				<td align="left" valign="top">　サービス内容</td>
+				<td>
+					　1.入浴サービス<br>
+					　2.送迎サービス<br>
+					　3.健康管理<br>
+					　4.機能訓練<br>
+					　5.食事介助<br>
+					　6.社会参加訓練
+				</td>
+			</tr>
+		</table>
+		<h3 class="facility-main__heading-lv3">アクセス</h3>
+		<p class="facility-main__acces">〒555-0025　大阪府大阪市西淀川区1-15-16</p>
+		<div class="facility-main__map">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.9628438175077!2d135.46135229999996!3d34.706117100000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e5e481367bf3%3A0x1fd6c967e3c90145!2z44CSNTU1LTAwMjUg5aSn6Ziq5bqc5aSn6Ziq5biC6KW_5reA5bed5Yy65aer6YeM77yR5LiB55uu77yR77yV4oiS77yR77yW!5e0!3m2!1sja!2sjp!4v1655794151601!5m2!1sja!2sjp"
+				allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</section>
+
+	<!-- フッター　-->
+	<footer class="footer">
+		<div class="footer__inner">
+			<div>
+				<h2 class="footer__heading-lv2">お問い合わせ</h2>
+				<p class="footer__text">
+					メール、お電話にて<br>
+					お気軽にご連絡下さい。
+				</p>
+			</div>
+			<figure class="footer__img">
+				<img src="images/tel2.png" alt="お電話にてお問い合わせ下さい"><br>
+				<a href="contact.html"><img src="images/mail.png" alt="メールにてお問い合わせ下さい" class="footer__img--mail"></a>
+			</figure>
+		</div>
+		<nav class="footer-nav">
+			<ul class="footer-nav__inner">
+				<li><a href="index.html">ホーム</a></li>
+				<li class="footer-nav__item"><a href="service.html">サービス</a></li>
+				<li class="footer-nav__item"><a href="guide.html">ご利用案内</a></li>
+				<li class="footer-nav__item"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<hr>
+		<p class="copy-right">copyrightⒸ2022 ikoi</p>
+	</footer>
+
+	<ul class="reservation">
+		<li class="reservation__img"><a href="reservation.html"><img src="images/reservation.png"></a></li>
+		<li><img src="images/whiteallow.png"></li>
+	</ul>
+
+
+</body>
+
+</html>

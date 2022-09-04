@@ -1,0 +1,1683 @@
+@charset "UTF-8";
+@use 'mixin' as mix;
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: uddigikyokasho-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #f0fff3;
+  margin: 0 auto;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+.fadeout {
+  transition: all 2s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0px, 20px);
+}
+
+.fadein {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+}
+
+/* ---------------------------------------
+setting
+--------------------------------------- */
+$color_sub-heading: #8a8a8a;
+$color_line: #1aeb51;
+$color_line2: #707070;
+$color_bg: #ffffff;
+$color_box-shadow: #777777;
+
+// $font_xx-large: 4vw;
+// $font_x-large: 3.2vw;
+// $font_large: 2.8vw;
+// $font_x-medium: 2vw;
+// $font_medium: 1.6vw;
+$font_10x-large: 6.8vw;
+$font_9x-large: 6.4vw;
+$font_8x-large: 6vw;
+$font_7x-large: 5.6vw;
+$font_6x-large: 5.2vw;
+$font_5x-large: 4.8vw;
+$font_4x-large: 4.4vw;
+$font_3x-large: 4vw;
+$font_xx-large: 3.6vw;
+$font_x-large: 3.2vw;
+$font_llarge: 2.8vw;
+$font_large: 2.4vw;
+$font_x-medium: 2vw;
+$font_medium: 1.6vw;
+
+/* ---------------------------------------
+header
+--------------------------------------- */
+.header {
+  width: 100%;
+  display: flex;
+  height: auto;
+  background-color: $color_bg;
+  z-index: 8000;
+
+  @include mix.mq(sp) {
+    position: fixed;
+  }
+
+  &__logo {
+    width: 20vw;
+
+    margin: {
+      right: 4.9vw;
+      top: 1%;
+    }
+
+    @include mix.mq(sp) {
+      min-width: 130px;
+    }
+  }
+
+  &__img {
+    margin: {
+      left: auto;
+      right: 0;
+    }
+
+    display: flex;
+
+    @include mix.mq(sp) {
+      display: none;
+    }
+  }
+
+  &__tel {
+    width: 13.4vw;
+  }
+
+  &__contact {
+    width: 13.4vw;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  white-space: nowrap;
+
+  @include mix.mq(sp) {
+    display: none;
+  }
+
+  &__list {
+    margin: {
+      top: 6%;
+      left: 4.9vw;
+    }
+
+    font-size: $font_medium;
+  }
+}
+
+nav a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover::after {
+    transform: scale(1, 1);
+  }
+}
+
+nav li {
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+}
+
+.ham {
+  display: none;
+
+  @include mix.mq(sp) {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    height: 60vh;
+    color: #000000;
+    background-color: rgba(255, 255, 255);
+    transition: 0.7s;
+    display: flex;
+    flex-direction: column;
+    z-index: 9000;
+
+    &__img {
+      margin: 5vh 0 0 25vw;
+      white-space: nowrap;
+      width: 30vw;
+
+      &--contact:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &__list {
+      width: 100%;
+      height: 100%;
+      margin: 3vh 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &-btn {
+    @include mix.mq(sp) {
+      position: absolute;
+      right: 20px;
+      width: 35px;
+      height: 35px;
+
+      &__line {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: #000000;
+        transition: 0.5s;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #000000;
+          transition: 0.7s;
+          z-index: 9999;
+        }
+
+        &::before {
+          transform: translate(-51%, 500%);
+        }
+
+        &::after {
+          transform: translate(-51%, -500%);
+        }
+      }
+    }
+
+    &__text {
+      display: none;
+
+      @include mix.mq(sp) {
+        position: absolute;
+        font-size: 10px;
+        display: flex;
+        white-space: nowrap;
+        right: 18px;
+        top: 32px;
+      }
+    }
+  }
+}
+
+@include mix.mq(sp) {
+  .ham.open {
+    top: 0;
+  }
+
+  .ham-btn__line.open {
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      content: '';
+      background-color: #000000;
+      transition: 0.7s;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      right: 0;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      right: 0;
+    }
+  }
+}
+
+.mainvisu {
+  width: 100vw;
+  margin-bottom: 15%;
+
+  @include mix.mq(sp) {
+    margin-top: 50px;
+  }
+}
+
+/* ---------------------------------------
+pankuzu-list
+  --------------------------------------- */
+.pankuzu-list {
+  display: flex;
+  align-items: center;
+  background-color: #e5e5e5;
+
+  &__home {
+    width: 3.4vw;
+
+    margin : {
+      left: 5vw;
+      top: 10px;
+    }
+  }
+
+  &__item {
+    font-size: $font_medium;
+  }
+}
+
+/* ---------------------------------------
+title
+  --------------------------------------- */
+.title {
+  margin: 15% 0px;
+  text-align: center;
+
+  &__heading-lv1 {
+    font-size: $font_xx-large;
+    border-bottom: 0.5vw solid $color_line;
+    display: inline-block;
+    line-height: 120%;
+    font-weight: bold;
+
+    @include mix.mq(sp) {
+      font-size: $font_8x-large;
+    }
+  }
+
+  &__heading-lv4 {
+    font-size: $font_medium;
+    color: $color_sub-heading;
+    line-height: 120%;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+    }
+  }
+
+  &__text {
+    font-size: $font_medium;
+    margin-top: 3%;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+    }
+  }
+}
+
+/* ---------------------------------------
+footer
+--------------------------------------- */
+.footer {
+  margin-top: -7%;
+  height: auto;
+  background-color: $color_bg;
+
+  &__inner {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 0 10vw;
+
+    @include mix.mq(sp) {
+      gap: 0 5vw;
+    }
+  }
+
+  &__heading-lv2 {
+    font-size: $font_x-large;
+    border-bottom: 0.5vw solid $color_line;
+    display: inline-block;
+    line-height: 120%;
+    margin-top: 5vh;
+
+    @include mix.mq(sp) {
+      font-size: $font_6x-large;
+    }
+  }
+
+  &__text {
+    font-size: $font_medium;
+    line-height: 120%;
+
+    @include mix.mq(sp) {
+      font-size: $font_x-large;
+    }
+  }
+
+  &__img {
+    margin-top: 5vh;
+    width: 18.2vw;
+    height: auto;
+
+    @include mix.mq(sp) {
+      width: 30vw;
+    }
+
+    &--mail:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &-nav {
+    text-align: center;
+    font-size: $font_medium;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+    }
+
+    &__inner {
+      text-align: center;
+      margin-top: 3vh;
+    }
+
+    &__item {
+      margin-left: 4.9vw;
+    }
+  }
+}
+
+hr {
+  border-width: 0.1vw 0px 0px 0px;
+  border-style: solid;
+  border-color: rgba(169, 169, 169);
+  height: 1px;
+  margin: 0 40px;
+}
+
+.copy-right {
+  padding: 1%;
+  font-size: 1vw;
+  text-align: center;
+
+  @include mix.mq(sp) {
+    font-size: $font_x-large;
+  }
+}
+
+.reservation {
+  position: fixed;
+  bottom: 10%;
+  right: 0;
+  display: flex;
+  filter: drop-shadow(0px 3px 6px $color_box-shadow);
+  opacity: 0;
+  transform: translateY(100px);
+  width: 11.5vw;
+  height: auto;
+  z-index: 100;
+
+  @include mix.mq(sp) {
+    width: 25vw;
+  }
+
+  &__img img {
+    transition: 0.4s all;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &.UpMove {
+    animation: UpAnime 0.5s forwards;
+  }
+
+  &.DownMove {
+    animation: DownAnime 0.5s forwards;
+  }
+}
+
+@keyframes UpAnime {
+  from {
+    opacity: 0;
+    transform: translate(180px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes DownAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(180px);
+  }
+}
+
+/* ---------------------------------------
+index_about
+--------------------------------------- */
+.home-about {
+  text-align: center;
+
+  &__heading-lv1 {
+    font-size: $font_xx-large;
+    border-bottom: 0.5vw solid $color_line;
+    display: inline-block;
+    line-height: 120%;
+    font-weight: bold;
+
+    @include mix.mq(sp) {
+      font-size: $font_8x-large;
+    }
+  }
+
+  &__heading-lv4 {
+    font-size: $font_medium;
+    color: $color_sub-heading;
+    line-height: 120%;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+    }
+  }
+
+  &__text {
+    margin: 5% 5vw 15%;
+    font-size: $font_medium;
+    line-height: 200%;
+
+    @include mix.mq(sp) {
+      margin: 5% 0vw 15%;
+      font-size: $font_xx-large;
+    }
+  }
+
+  &__indention {
+    display: inline-block;
+  }
+}
+
+/* ---------------------------------------
+index_service
+--------------------------------------- */
+
+.home-service {
+  &__content {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 36.5vw;
+    height: auto;
+    position: relative;
+    margin-left: 16.3vw;
+    border-radius: 20%;
+    box-shadow: 0px 3px 6px $color_box-shadow;
+    z-index: 20;
+    text-align: center;
+
+    @include mix.mq(sp) {
+      width: 76vw;
+      margin-left: 12vw;
+    }
+  }
+
+  &__heading-lv2 {
+    font-size: $font_x-large;
+    border-bottom: 0.5vw solid $color_line;
+    display: inline-block;
+    line-height: 120%;
+    margin-top: 5%;
+    font-weight: bold;
+
+    @include mix.mq(sp) {
+      font-size: $font_6x-large;
+      margin-top: 8%;
+    }
+  }
+
+  &__heading-lv4 {
+    font-size: $font_medium;
+    color: $color_sub-heading;
+    line-height: 120%;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+    }
+  }
+
+  &__text {
+    font-size: $font_medium;
+    margin-top: 5%;
+    line-height: 200%;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+      margin-top: 5%;
+      line-height: 200%;
+    }
+  }
+
+  &__list {
+    font-size: $font_medium;
+    column-count: 2;
+    line-height: 200%;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+      column-count: 2;
+      line-height: 200%;
+    }
+  }
+
+  &__item {
+    color: #4694ff;
+  }
+
+  &__btn {
+    margin: 5% 0;
+
+    @include mix.mq(sp) {
+      margin: 8% 0;
+    }
+  }
+
+  &__img {
+    border-radius: 20%;
+    width: 45vw;
+    filter: drop-shadow(0px 3px 6px $color_box-shadow);
+    z-index: 10;
+
+    margin : {
+      top: -20%;
+      left: 42.3vw;
+    }
+
+    @include mix.mq(sp) {
+      width: 70vw;
+
+      margin : {
+        top: 10%;
+        left: 15vw;
+      }
+    }
+  }
+}
+
+.btn {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  border-radius: 25px;
+  border: solid 4px $color_line;
+  outline: none;
+  transition: all 0.2s ease;
+  font-size: $font_medium;
+
+  @include mix.mq(sp) {
+    font-size: $font_xx-large;
+  }
+
+  &:hover {
+    border-color: transparent;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    display: block;
+    padding: 1px 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    color: $color_line;
+    transition: all 0.3s ease;
+  }
+}
+
+.pushdown {
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: #a1a1a1;
+  }
+
+  &:hover span {
+    background-color: #a1a1a1;
+    color: $color_bg;
+    transform: translateY(6px);
+  }
+}
+
+/* ---------------------------------------
+index_guide
+--------------------------------------- */
+.home-guide {
+  width: 100%;
+  height: auto;
+  background-color: #dee6ff;
+  margin: 15% 0;
+  text-align: center;
+  display: flex;
+
+  @include mix.mq(sp) {
+    text-align: center;
+    display: inline-block;
+  }
+
+  &__heading-lv2 {
+    font-size: $font_x-large;
+    border-bottom: 0.5vw solid $color_line;
+    display: inline-block;
+    line-height: 120%;
+    margin-top: 5%;
+
+    @include mix.mq(sp) {
+      font-size: $font_6x-large;
+      margin-top: 8%;
+    }
+  }
+
+  &__heading-lv4 {
+    font-size: $font_medium;
+    color: $color_sub-heading;
+    line-height: 120%;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+    }
+  }
+
+  &__usage-flow {
+    width: 14.1vw;
+    margin-left: 10vw;
+
+    @include mix.mq(sp) {
+      width: 30vw;
+      margin-left: 3vw;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    line-height: 120%;
+    margin-right: 40vw;
+    font-size: $font_medium;
+
+    @include mix.mq(sp) {
+      text-align: center;
+      font-size: $font_xx-large;
+      white-space: nowrap;
+      margin-right: 0vw;
+    }
+  }
+
+  &__btn {
+    margin: 3% 0 6% -40vw;
+
+    @include mix.mq(sp) {
+      margin: 6% 0 9%;
+      font-size: $font_xx-large;
+    }
+
+    & span {
+      position: relative;
+      z-index: 2;
+      display: block;
+      padding: 1px 15px;
+      background: #dee6ff;
+      border-radius: 25px;
+      color: $color_line;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__img {
+    width: 38.4vw;
+    height: auto;
+    margin: -27% 0 7% 55vw;
+    filter: drop-shadow(0px 3px 6px $color_box-shadow);
+
+    @include mix.mq(sp) {
+      width: 70vw;
+      margin: 0% 0 5% 16vw;
+    }
+  }
+}
+
+/* ---------------------------------------
+index_topic
+--------------------------------------- */
+.home-topic {
+  margin: -7% 0 15% 4vw;
+  width: 90vw;
+  height: auto;
+  background-image: url(../images/topic.jpg);
+  background-size: cover;
+  padding-bottom: 3%;
+
+  @include mix.mq(sp) {
+    text-align: center;
+  }
+
+  &__heading-lv3 {
+    font-size: $font_large;
+    border-bottom: 0.5vw solid $color_line;
+    display: inline-block;
+    line-height: 120%;
+
+    margin: {
+      left: 4.5vw;
+      top: 5%;
+    }
+
+    @include mix.mq(sp) {
+      font-size: $font_5x-large;
+      margin-left: 0vw;
+    }
+  }
+
+  &__heading-lv4 {
+    font-size: 1.4vw;
+    color: $color_sub-heading;
+    line-height: 120%;
+    margin-left: 7.2vw;
+
+    @include mix.mq(sp) {
+      font-size: $font_x-large;
+      margin-left: 0vw;
+    }
+  }
+
+  &__wrap {
+    margin : {
+      left: 21vw;
+      top: -6%;
+    }
+
+    overflow: hidden;
+
+    @include mix.mq(sp) {
+      margin: {
+        left: 5vw;
+        top: 3%;
+      }
+    }
+  }
+
+  &__text {
+    padding: 2% 0;
+    white-space: nowrap;
+    font-size: $font_medium;
+
+    @include mix.mq(sp) {
+      padding: 1% 0;
+      font-size: $font_x-large;
+    }
+  }
+
+  &__content {
+    width: 65vw;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1%;
+
+    @include mix.mq(sp) {
+      display: flex;
+      width: 80vw;
+    }
+  }
+}
+
+/* ---------------------------------------
+service_main
+  --------------------------------------- */
+.service-main {
+  @include mix.mq(sp) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+
+    @include mix.mq(sp) {
+      display: block;
+    }
+
+    &--bottom {
+      margin-bottom: 15%;
+    }
+  }
+
+  &__wrap {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 25vw;
+    height: auto;
+    border-radius: 20%;
+    filter: drop-shadow(0px 3px 6px #777777);
+    padding: 2%;
+
+    @include mix.mq(sp) {
+      width: 65vw;
+      height: auto;
+      padding: 10%;
+    }
+
+    &--left {
+      margin-left: 3%;
+
+      @include mix.mq(sp) {
+        margin : {
+          top: 10%;
+          left: 3%;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2.4vw;
+    line-height: 200%;
+
+    @include mix.mq(sp) {
+      font-size: $font_4x-large;
+    }
+
+    & span {
+      color: #4694ff;
+    }
+  }
+
+  &__text {
+    font-size: 1.4vw;
+    line-height: 200%;
+    margin-bottom: 20%;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+    }
+  }
+}
+
+/* ---------------------------------------
+service_flow
+  --------------------------------------- */
+.service {
+  &-flow {
+    background-color: #dee6ff;
+
+    &__title {
+      display: none;
+      text-align: center;
+
+      @include mix.mq(sp) {
+        display: block;
+      }
+    }
+
+    &__heading-lv1 {
+      font-size: $font_6x-large;
+      font-weight: bold;
+      border-bottom: 0.5vw solid $color_line;
+      display: inline-block;
+      line-height: 120%;
+      margin-top: 5%;
+    }
+
+    &__heading-lv4 {
+      font-size: $font_xx-large;
+      color: $color_sub-heading;
+      line-height: 120%;
+    }
+
+    &__feature {
+      width: 10vw;
+
+      margin : {
+        top: -5%;
+        left: 2.6vw;
+      }
+
+      @include mix.mq(sp) {
+        display: none;
+      }
+    }
+
+    &__note {
+      font-size: 1.4vw;
+
+      margin : {
+        top: -5%;
+        left: 56vw;
+      }
+
+      @include mix.mq(sp) {
+        font-size: $font_xx-large;
+
+        margin : {
+          top: 3%;
+          left: 0vw;
+          bottom: 4%;
+        }
+
+        text-align: center;
+      }
+    }
+  }
+
+  &-img {
+    display: flex;
+
+    margin : {
+      top: 2%;
+      left: 5vw;
+      bottom: 5%;
+    }
+
+    @include mix.mq(sp) {
+      display: block;
+      text-align: center;
+
+      margin : {
+        top: 0;
+        left: 0vw;
+        bottom: 7%;
+      }
+    }
+
+    &__list {
+      width: 18vw;
+
+      margin : {
+        top: 3%;
+        bottom: 20%;
+      }
+
+      @include mix.mq(sp) {
+        width: 60vw;
+
+        margin : {
+          top: 0%;
+          bottom: 0%;
+        }
+      }
+    }
+
+    &__wrap {
+      position: relative;
+      z-index: auto;
+      transition: 0.5s;
+
+      &:hover .service-img__lead {
+        z-index: 2;
+        display: block;
+        animation: fade 0.3s;
+      }
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+        margin-top: -20%;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    &__lead {
+      position: absolute;
+      width: 20vw;
+      height: 65%;
+      top: -80%;
+      right: 0.5%;
+      border-radius: 10px;
+      background-color: $color_bg;
+      display: none;
+      filter: drop-shadow(0px 3px 6px $color_box-shadow);
+
+      @include mix.mq(sp) {
+        width: 40vw;
+        height: 70%;
+        top: -77%;
+        left: 30vw;
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        top: 100%;
+        left: 9vw;
+        border: 1.6vw solid transparent;
+        border-top: 1.6vw solid $color_bg;
+
+        @include mix.mq(sp) {
+          left: 18vw;
+          border: 3vw solid transparent;
+          border-top: 3vw solid $color_bg;
+        }
+      }
+    }
+
+    &__text {
+      font-size: 1.6vw;
+      line-height: 160%;
+      padding: 2% 6%;
+      position: absolute;
+      top: 8px;
+
+      @include mix.mq(sp) {
+        font-size: $font_xx-large;
+        line-height: 180%;
+        text-align: initial;
+        padding: 1% 8%;
+      }
+    }
+  }
+}
+
+/* ---------------------------------------
+guide_main
+  --------------------------------------- */
+.guide {
+  &-table {
+    width: 85vw;
+    height: 200%;
+    margin: 0 auto;
+    border: 1vw solid #d5c7c7;
+    border-radius: 20px;
+    margin-bottom: 20%;
+
+    @include mix.mq(sp) {
+      width: 90vw;
+      height: 200%;
+    }
+
+    &__inner {
+      display: table;
+      padding: 3%;
+    }
+
+    &__heading-lv3 {
+      font-size: $font_x-medium;
+      margin-left: 5vw;
+
+      @include mix.mq(sp) {
+        font-size: $font_3x-large;
+        border-bottom: 0.5vw solid $color_line;
+        display: inline-block;
+        line-height: 120%;
+        margin: 5% 0;
+        text-align: center;
+      }
+    }
+
+    &__wrap {
+      display: table-cell;
+
+      @include mix.mq(sp) {
+        display: block;
+      }
+
+      &--main {
+        width: 30%;
+
+        @include mix.mq(sp) {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    &__unit {
+      margin: 5% 0;
+    }
+
+    &__sub-title {
+      font-size: $font_x-medium;
+
+      @include mix.mq(sp) {
+        font-size: $font_3x-large;
+      }
+    }
+  }
+
+  &-text {
+    font-size: $font_medium;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+      line-height: 150%;
+    }
+
+    &__flow {
+      margin-left: 9vw;
+
+      @include mix.mq(sp) {
+        margin : {
+          left: 10vw;
+          right: 5vw;
+        }
+      }
+    }
+
+    &__target {
+      margin-left: 6vw;
+
+      @include mix.mq(sp) {
+        margin: 0 5vw 5% 5vw;
+      }
+
+      & span {
+        color: $color_line;
+      }
+    }
+
+    &__cost-experience {
+      margin-left: 5vw;
+
+      @include mix.mq(sp) {
+        margin: 0 5vw 3% 5vw;
+      }
+    }
+
+    &__pick {
+      margin-left: 5.5vw;
+
+      @include mix.mq(sp) {
+        margin: 3% 5vw;
+      }
+    }
+  }
+}
+
+.circle {
+  width: 3.5vw;
+  height: 10%;
+  border-radius: 50%;
+  background-color: $color_line;
+  color: $color_bg;
+  text-align: center;
+  float: left;
+
+  margin: {
+    left: 5vw;
+    top: 0.8%;
+  }
+
+  font-size: $font_medium;
+
+  @include mix.mq(sp) {
+    width: 7vw;
+
+    margin : {
+      left: 3vw;
+      top: 0;
+    }
+
+    font-size: $font_xx-large;
+  }
+}
+
+.line {
+  border-width: 0.7vw 0px 0px 0px;
+  border-style: dashed;
+  border-color: #d5c7c7;
+  height: 3px;
+  margin: 0 4vw;
+}
+
+/* ---------------------------------------
+facility_main
+  --------------------------------------- */
+.facility {
+  &-main {
+    &__heading-lv3 {
+      display: flex;
+      font-size: $font_large;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5%;
+
+      @include mix.mq(sp) {
+        font-size: $font_4x-large;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        border-top: 1px solid $color_line2;
+        width: 10em;
+
+        @include mix.mq(sp) {
+          width: 6em;
+        }
+      }
+
+      &:before {
+        margin-right: 2.5em;
+
+        @include mix.mq(sp) {
+          margin-right: 1.5em;
+        }
+      }
+
+      &:after {
+        margin-left: 2.5em;
+
+        @include mix.mq(sp) {
+          margin-left: 1.5em;
+        }
+      }
+    }
+
+    &__table {
+      margin: {
+        left: auto;
+        right: auto;
+        bottom: 15%;
+      }
+
+      border-collapse: collapse;
+
+      & tr td:nth-child(1) {
+        width: 20vw;
+
+        @include mix.mq(sp) {
+          width: 30vw;
+        }
+      }
+
+      & tr td:nth-child(2) {
+        width: 50vw;
+
+        @include mix.mq(sp) {
+          width: 60vw;
+        }
+      }
+
+      & td:nth-child(odd) {
+        background: #dee6ff;
+      }
+    }
+
+    &__text {
+      font-size: $font_medium;
+
+      @include mix.mq(sp) {
+        font-size: $font_xx-large;
+      }
+    }
+
+    &__acces {
+      text-align: center;
+      margin-bottom: 5%;
+      font-size: $font_medium;
+
+      @include mix.mq(sp) {
+        font-size: $font_xx-large;
+      }
+    }
+
+    &__map {
+      height: 20%;
+      margin-bottom: 15%;
+    }
+  }
+}
+
+table,
+td,
+tr {
+  border: 1px $color_line2 solid;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------------------------------------
+contact / reservation_mein
+  --------------------------------------- */
+.contact {
+  &-form {
+    &__heading-lv3 {
+      display: flex;
+      font-size: $font_large;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10%;
+
+      @include mix.mq(sp) {
+        font-size: $font_5x-large;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        border-top: 1px solid $color_line2;
+        width: 7.5em;
+
+        @include mix.mq(sp) {
+          width: 3.5em;
+        }
+      }
+
+      &:before {
+        margin-right: 2.5em;
+
+        @include mix.mq(sp) {
+          margin-right: 1.5em;
+        }
+      }
+
+      &:after {
+        margin-left: 2.5em;
+
+        @include mix.mq(sp) {
+          margin-left: 1.5em;
+        }
+      }
+    }
+
+    &__text {
+      text-align: center;
+      margin: 0 10vw;
+      line-height: 120%;
+      font-size: $font_medium;
+      padding: 3% 0 9% 0;
+
+      @include mix.mq(sp) {
+        font-size: $font_xx-large;
+        margin: 0 4%;
+      }
+    }
+  }
+
+  &-input {
+    display: flex;
+    flex-flow: column;
+
+    margin: {
+      left: 15vw;
+      bottom: 5%;
+    }
+
+    font-size: $font_medium;
+
+    @include mix.mq(sp) {
+      margin-left: 15vw;
+      font-size: $font_xx-large;
+    }
+
+    &__name {
+      margin-left: 12.5vw;
+      width: 50.1vw;
+
+      @include mix.mq(sp) {
+        margin-left: 0vw;
+        width: 70vw;
+      }
+    }
+
+    &__tel {
+      margin-left: 9.3vw;
+      width: 50.1vw;
+
+      @include mix.mq(sp) {
+        margin-left: 0vw;
+        width: 70vw;
+      }
+    }
+
+    &__mail {
+      margin-left: 4.5vw;
+      width: 50.1vw;
+
+      @include mix.mq(sp) {
+        margin-left: 0vw;
+        width: 70vw;
+      }
+    }
+
+    &__contact {
+      width: 50.1vw;
+
+      margin : {
+        left: 16vw;
+        top: -3%;
+      }
+
+      @include mix.mq(sp) {
+        margin : {
+          left: 0vw;
+          top: 0;
+        }
+
+        width: 70vw;
+      }
+    }
+
+    &__date {
+      margin-left: -0.3vw;
+      width: 50.1vw;
+
+      @include mix.mq(sp) {
+        margin-left: 0vw;
+        width: 70vw;
+      }
+    }
+  }
+}
+
+.block {
+  @include mix.mq(sp) {
+    display: block;
+  }
+}
+
+input,
+textarea {
+  background-color: $color_bg;
+  border: 0.1vw solid $color_line2;
+  margin-bottom: 5%;
+  border-radius: 5px;
+  padding: 1%;
+
+  &:focus {
+    background-color: #e2e2e2;
+  }
+}
+
+.policy {
+  text-align: center;
+
+  margin : {
+    bottom: 5%;
+    top: -5%;
+  }
+
+  font-size: $font_medium;
+
+  @include mix.mq(sp) {
+    font-size: $font_xx-large;
+  }
+
+  &--underline {
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &-checkbox {
+    width: 41vw;
+    height: 20%;
+    border: 0.5vw solid #e5e5e5;
+    margin: 5% 0 10% 29vw;
+
+    @include mix.mq(sp) {
+      width: 80vw;
+      height: 20%;
+      border: 1vw solid #e5e5e5;
+      margin-left: 9vw;
+    }
+
+    &__text {
+      margin : {
+        top: 1%;
+        left: 5vw;
+      }
+
+      position: absolute;
+      font-size: $font_medium;
+
+      @include mix.mq(sp) {
+        margin : {
+          top: 1%;
+          left: 8vw;
+        }
+
+        position: absolute;
+        font-size: $font_xx-large;
+      }
+    }
+
+    &__btn {
+      margin: 12% auto 5%;
+      display: block;
+      justify-content: center;
+      width: 20vw;
+
+      @include mix.mq(sp) {
+        font-size: $font_xx-large;
+        width: 40vw;
+      }
+
+      & span {
+        position: relative;
+        z-index: 2;
+        display: block;
+        padding: 1px 15px;
+        background: #dee6ff;
+        border-radius: 25px;
+        color: $color_line;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+.note {
+  width: auto;
+  height: auto;
+  background-color: #dee6ff;
+
+  &__text {
+    margin: 0 10vw;
+    line-height: 120%;
+    font-size: $font_medium;
+    padding: 3% 0 9% 0;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+      margin: 0 5%;
+    }
+  }
+}
+
+/* ---------------------------------------
+policy_main
+--------------------------------------- */
+.policy-main {
+  line-height: 140%;
+  margin: 15% 15%;
+
+  &__heading-lv3 {
+    font-size: $font_large;
+
+    @include mix.mq(sp) {
+      font-size: $font_5x-large;
+    }
+
+    &--red {
+      font-size: $font_x-large;
+      color: red;
+
+      @include mix.mq(sp) {
+        font-size: $font_6x-large;
+      }
+    }
+  }
+
+  &__text {
+    font-size: $font_medium;
+
+    @include mix.mq(sp) {
+      font-size: $font_xx-large;
+      margin-bottom: 8%;
+    }
+  }
+}

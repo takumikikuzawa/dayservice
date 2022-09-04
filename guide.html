@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>デイサービスセンター　いこい</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+		(function (d) {
+			var config = {
+				kitId: 'vgk2pfk',
+				scriptTimeout: 3000,
+				async: true
+			},
+				h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+		})(document);
+	</script>
+</head>
+
+<body>
+	<!-- ヘッダー　-->
+	<header class="header">
+		<div class="header__logo">
+			<a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+		</div>
+		<nav>
+			<ul class="nav">
+				<li class="nav__list"><a href="index.html">ホーム</a></li>
+				<li class="nav__list"><a href="service.html">サービス</a></li>
+				<li class="nav__list"><a href="guide.html">ご利用案内</a></li>
+				<li class="nav__list"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<figure class="header__img">
+			<a href=""><img src="images/tel1.png" alt="お電話でのお問い合わせ" class="header__tel"></a>
+			<a href="contact.html"><img src="images/contact.png" alt="メールでのお問い合わせ" class="header__contact"></a>
+		</figure>
+
+		<div class="ham">
+			<div>
+				<div class="ham__img">
+					<img src="images/tel1.png" alt="お電話でのお問い合わせ">
+					<span class="ham__img--contact"><a href="contact.html"><img src="images/contact.png" alt="メールでのお問い合わせ"></a></span>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li class="ham__list"><a href="index.html">ホーム</a></li>
+					<hr>
+					<li class="ham__list"><a href="service.html">サービス</a></li>
+					<hr>
+					<li class="ham__list"><a href="guide.html">ご利用案内</a></li>
+					<hr>
+					<li class="ham__list"><a href="facility.html">施設案内</a></li>
+					<hr>
+				</ul>
+			</nav>
+		</div>
+		<button type="button" class="ham-btn js-btn">
+			<span class="ham-btn__line"></span>
+		</button>
+		<p class="ham-btn__text">メニュー</p>
+	</header>
+
+	<!--　パンくずリスト -->
+	<div class="pankuzu-list">
+		<a href="index.html"><img src="images/home.png" alt="ホーム" class="pankuzu-list__home"></a>
+		<p class="pankuzu-list__item">　/　ご利用案内</p>
+	</div>
+
+	<!--　タイトル　-->
+	<section class="title">
+		<h1 class="title__heading-lv1">ご利用案内</h1>
+		<h4 class="title__heading-lv4">Guide</h4>
+	</section>
+
+	<!--　メイン　-->
+	<section class="guide-table">
+		<div class="guide-table__inner">
+			<div class="guide-table__wrap guide-table__wrap--main">
+				<h3 class="guide-table__heading-lv3">ご利用の流れ</h3>
+			</div>
+			<div class="guide-table__wrap">
+				<div class="guide-table__unit">
+					<span class="circle">1</span>
+					<p class="guide-table__sub-title">要介護認定有無の確認</p>
+					<p class="guide-text guide-text__flow">当サービスをご利用になれれる方が要介護認定を
+					受けられているかどうかをご確認下さい。</p>
+				</div>
+				<div class="guide-table__unit">
+					<span class="circle">2</span>
+					<p class="guide-table__sub-title">お問い合わせください</p>
+					<p class="guide-text guide-text__flow">お電話、メールにてご連絡いただけますと折り返しご連絡いたします。
+					サービスご利用のほか、介護認定についてのご相談も承ります。</p>
+				</div>
+				<div class="guide-table__unit">
+					<span class="circle">3</span>
+					<p class="guide-table__sub-title">見学・体験</p>
+					<p class="guide-text guide-text__flow">当施設をご見学いただいたり、体験にご参加いただくことにより
+					サービス開始後のギャップを減らすことができます。</p>
+				</div>
+				<div class="guide-table__unit">
+					<span class="circle">4</span>
+					<p class="guide-table__sub-title">サービス利用開始</p>
+					<p class="guide-text guide-text__flow">当サービスをご利用いただくための登録が完了したら
+					サービス利用開始です。</p>
+				</div>
+			</div>
+		</div>
+		<hr class="line">
+
+		<div class="guide-table__inner">
+			<div class="guide-table__wrap guide-table__wrap--main">
+				<h3 class="guide-table__heading-lv3">対象者</h3>
+			</div>
+			<div class="guide-table__wrap">
+				<p class="guide-text guide-text__target"><span>●</span>　要介護被保険者証をお持ちの方<br>
+				<span>●</span>　６５歳以上で介護認定を受けられていて、要介護・要支援の方</p>
+			</div>
+		</div>
+		<hr class="line">
+		<div class="guide-table__inner">
+			<div class="guide-table__wrap guide-table__wrap--main">
+				<h3 class="guide-table__heading-lv3">費用</h3>
+			</div>
+			<div class="guide-table__wrap">
+				<p class="guide-text guide-text__cost-experience">
+				介護保険法に基づき、介護保険料1割自己負担分を頂います。	要介護度やサ－ビスの内容により費用が異なりますのでお気	軽にお問い合わせください。なお、昼食代として、1食650	円頂きます。
+			</p>
+			</div>
+		</div>
+		<hr class="line">
+		<div class="guide-table__inner">
+			<div class="guide-table__wrap guide-table__wrap--main">
+				<h3 class="guide-table__heading-lv3">ご送迎範囲</h3>
+			</div>
+			<div class="guide-table__wrap">
+				<p class="guide-text guide-text__pick">
+					大阪市内全域、一部市町村。車両乗降や屋外歩行を介助致します。
+				</p>
+			</div>
+		</div>
+		<hr class="line">
+
+		<div class="guide-table__inner">
+			<div class="guide-table__wrap guide-table__wrap--main">
+				<h3 class="guide-table__heading-lv3">見学・体験について</h3>
+			</div>
+			<div class="guide-table__wrap">
+				<p class="guide-text guide-text__cost-experience">
+					見学もOKです。ただし、体験は準備が必要となりますので事前にご連絡頂けると幸いです。
+				</p>
+				<p class="guide-text guide-text__cost-experience">
+				<br>【見学体験日時】月～金（10:00～16:00)<br>
+				【見学体験時間】ご要望に合わせます
+			  </p>
+			</div>
+		</div>
+	</section>
+
+	<!-- フッター　-->
+	<footer class="footer">
+		<div class="footer__inner">
+			<div>
+				<h2 class="footer__heading-lv2">お問い合わせ</h2>
+				<p class="footer__text">
+							メール、お電話にて<br>
+							お気軽にご連絡下さい。
+						</p>
+			</div>
+			<figure class="footer__img">
+				<img src="images/tel2.png" alt="お電話にてお問い合わせ下さい"><br>
+				<a href="contact.html"><img src="images/mail.png" alt="メールにてお問い合わせ下さい" class="footer__img--mail"></a>
+			</figure>
+		</div>
+		<nav class="footer-nav">
+			<ul class="footer-nav__inner">
+				<li><a href="index.html">ホーム</a></li>
+				<li class="footer-nav__item"><a href="service.html">サービス</a></li>
+				<li class="footer-nav__item"><a href="guide.html">ご利用案内</a></li>
+				<li class="footer-nav__item"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<hr>
+		<p class="copy-right">copyrightⒸ2022 ikoi</p>
+	</footer>
+
+	<ul class="reservation">
+		<li class="reservation__img"><a href="reservation.html"><img src="images/reservation.png"></a></li>
+		<li><img src="images/whiteallow.png"></li>
+	</ul>
+</body>
+</html>

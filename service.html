@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>デイサービスセンター　いこい</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+		(function (d) {
+			var config = {
+				kitId: 'vgk2pfk',
+				scriptTimeout: 3000,
+				async: true
+			},
+				h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+		})(document);
+	</script>
+</head>
+
+<body>
+
+	<!-- ヘッダー　-->
+	<header class="header">
+		<div class="header__logo">
+			<a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+		</div>
+		<nav>
+			<ul class="nav">
+				<li class="nav__list"><a href="index.html">ホーム</a></li>
+				<li class="nav__list"><a href="service.html">サービス</a></li>
+				<li class="nav__list"><a href="guide.html">ご利用案内</a></li>
+				<li class="nav__list"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<figure class="header__img">
+			<a href=""><img src="images/tel1.png" alt="お電話でのお問い合わせ" class="header__tel"></a>
+			<a href="contact.html"><img src="images/contact.png" alt="メールでのお問い合わせ" class="header__contact"></a>
+		</figure>
+
+		<div class="ham">
+			<div>
+				<div class="ham__img">
+					<img src="images/tel1.png" alt="お電話でのお問い合わせ">
+					<span class="ham__img--contact"><a href="contact.html"><img src="images/contact.png"
+								alt="メールでのお問い合わせ"></a></span>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li class="ham__list"><a href="index.html">ホーム</a></li>
+					<hr>
+					<li class="ham__list"><a href="service.html">サービス</a></li>
+					<hr>
+					<li class="ham__list"><a href="guide.html">ご利用案内</a></li>
+					<hr>
+					<li class="ham__list"><a href="facility.html">施設案内</a></li>
+					<hr>
+				</ul>
+			</nav>
+		</div>
+		<button type="button" class="ham-btn js-btn">
+			<span class="ham-btn__line"></span>
+		</button>
+		<p class="ham-btn__text">メニュー</p>
+	</header>
+
+	<!--　パンくずリスト -->
+	<div class="pankuzu-list">
+		<a href="index.html"><img src="images/home.png" alt="ホーム" class="pankuzu-list__home"></a>
+		<p class="pankuzu-list__item">　/　サービス</p>
+	</div>
+
+	<!--　タイトル　-->
+	<section class="title">
+		<h1 class="title__heading-lv1">サービス</h1>
+		<h4 class="title__heading-lv4">Service</h4>
+		<p class="title__text">ご本人様・ご家族様の視点を<br>大切にしたサービスの提供を心がけます。</p>
+	</section>
+
+	<!--　メイン　-->
+	<section class="service-main">
+		<div class="service-main__inner">
+			<div class="service-main__wrap fadeout">
+				<p class="service-main__title"><span>■</span>入浴サービス</p>
+				<p class="service-main__text">自宅での入浴が困難な方に対し介護職がお手伝い致します。今より楽に入れるようになる訓練も行えます。</p>
+			</div>
+			<div class="service-main__wrap service-main__wrap--left fadeout">
+				<p class="service-main__title"><span>■</span>送迎サービス</p>
+				<p class="service-main__text">お送りお迎え、乗降を職員がサポート致します。足が不自由な方も心配ございません。</p>
+			</div>
+			<div class="service-main__wrap service-main__wrap--left fadeout">
+				<p class="service-main__title"><span>■</span>健康管理</p>
+				<p class="service-main__text">体調不良の第一発見者は「自分」です。何を使って何を調べるのかを自分で出来ることが大切です。</p>
+			</div>
+		</div>
+		<div class="service-main__inner service-main__inner--bottom">
+			<div class="service-main__wrap fadeout">
+				<p class="service-main__title"><span>■</span>機能訓練</p>
+				<p class="service-main__text">利用者様のご希望と身体、心の状態に合わせた目標を設定し、目標に向けた機能訓練を行います。</p>
+			</div>
+			<div class="service-main__wrap service-main__wrap--left fadeout">
+				<p class="service-main__title"><span>■</span>食事介助</p>
+				<p class="service-main__text">何等かの原因で食べられなくなった方が、ご自分で食べられるように支援します。</p>
+			</div>
+			<div class="service-main__wrap service-main__wrap--left fadeout">
+				<p class="service-main__title"><span>■</span>社会参加訓練</p>
+				<p class="service-main__text">外に出られるようには勿論ながら、公民館や課外活動をしたりと、周辺地域との社会交流を図ります。</p>
+			</div>
+		</div>
+	</section>
+
+	<!--　一日の流れ　-->
+	<section class="service-flow">
+		<div class="service-flow__title">
+			<h1 class="service-flow__heading-lv1">1日の流れ</h1>
+			<h4 class="service-flow__heading-lv4">Flow</h4>
+		</div>
+		<figure>
+			<img src="images/flow.png" alt="一日の流れ" class="service-flow__feature">
+		</figure>
+		<p class="service-flow__note">※タップ、もしくはマウスを重ねると説明が出ます。</p>
+		<ul class="service-img">
+			<div class="service-img__wrap">
+				<li><img src="images/flow-1.png" alt="お迎え" class="service-img__list"></li>
+				<div class="service-img__lead">
+					<p class="service-img__text">玄関先までお迎えに伺います。車両乗降や屋外介助等のサポートをさせて頂きます。</p>
+				</div>
+			</div>
+			<div class="service-img__wrap">
+				<li><img src="images/flow-2.png" alt="入浴・機能訓練・レクリエーション" class="service-img__list"></li>
+				<div class="service-img__lead">
+					<p class="service-img__text">入浴・レクリエーションが始まります。趣味や行事などを取り入れ、職員が一緒に行います。</p>
+				</div>
+			</div>
+			<div class="service-img__wrap">
+				<li><img src="images/flow-3.png" alt="昼食" class="service-img__list"></li>
+				<div class="service-img__lead">
+					<p class="service-img__text">栄養バランスを考えた美味しい食事を提供します。（病状に応じた食事もご用意いたします。）</p>
+				</div>
+			</div>
+			<div class="service-img__wrap">
+				<li><img src="images/flow-4.png" alt="入浴・機能訓練・レクリエーション" class="service-img__list"></li>
+				<div class="service-img__lead">
+					<p class="service-img__text">歌やゲーム・体操などを取り入れ、無理なく心身機能の維持・向上を目指した行事を行います。</p>
+				</div>
+			</div>
+			<div class="service-img__wrap">
+				<li><img src="images/flow-5.png" alt="お送り" class="service-img__list"></li>
+				<div class="service-img__lead">
+					<p class="service-img__text">お時間になりましたら、利用者様のご自宅の玄関先まで専用車にて安全にお送りさせて頂きます。</p>
+				</div>
+			</div>
+		</ul>
+	</section>
+
+	<!-- フッター　-->
+	<footer class="footer">
+		<div class="footer__inner">
+			<div>
+				<h2 class="footer__heading-lv2">お問い合わせ</h2>
+				<p class="footer__text">
+					メール、お電話にて<br>
+					お気軽にご連絡下さい。
+				</p>
+			</div>
+			<figure class="footer__img">
+				<img src="images/tel2.png" alt="お電話にてお問い合わせ下さい"><br>
+				<a href="contact.html"><img src="images/mail.png" alt="メールにてお問い合わせ下さい" class="footer__img--mail"></a>
+			</figure>
+		</div>
+		<nav class="footer-nav">
+			<ul class="footer-nav__inner">
+				<li><a href="index.html">ホーム</a></li>
+				<li class="footer-nav__item"><a href="service.html">サービス</a></li>
+				<li class="footer-nav__item"><a href="guide.html">ご利用案内</a></li>
+				<li class="footer-nav__item"><a href="facility.html">施設案内</a></li>
+			</ul>
+		</nav>
+		<hr>
+		<p class="copy-right">copyrightⒸ2022 ikoi</p>
+	</footer>
+
+	<ul class="reservation">
+		<li class="reservation__img"><a href="reservation.html"><img src="images/reservation.png"></a></li>
+		<li><img src="images/whiteallow.png"></li>
+	</ul>
+
+</body>
+
+</html>
