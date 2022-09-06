@@ -465,6 +465,20 @@ hr {
     &:hover {
       opacity: 0.5;
     }
+    
+    &.slidein {
+    transform: translateX(200%);
+    }
+    
+  }
+  
+    &__allow {
+    transition: 0.4s all;
+    transform: rotateY(0);
+
+    &.rotate {
+      transform: rotateY(180deg);
+    }
   }
 
   &.UpMove {
