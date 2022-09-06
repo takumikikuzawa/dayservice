@@ -1,13 +1,13 @@
 (window.onload = function () {
-  jQuery(window).scroll(function () {
-    jQuery('.fadeout').each(function () {
+  $(window).scroll(function () {
+    $('.fadeout').each(function () {
       var winheight = jQuery(window).height();
       var posi = jQuery(this).offset().top;
       var scroll = jQuery(window).scrollTop();
       if (scroll + winheight > posi) {
-        jQuery(this).addClass('fadein');
+        $(this).addClass('fadein');
       } else {
-        jQuery(this).removeClass('fadein');
+        $(this).removeClass('fadein');
       }
     });
   });
@@ -32,5 +32,17 @@ $(window).scroll(function () {
 $(function () {
   $('.js-btn').on('click', function () {
     $('.ham , .ham-btn__line').toggleClass('open');
+  });
+});
+
+$(function () {
+  $('.reservation__allow').on('click', function () {
+    $('.reservation__img').toggleClass('slidein');
+  });
+});
+
+$(function () {
+  $('.reservation__allow').on('click', function () {
+    $('.reservation__allow').toggleClass('rotate');
   });
 });
